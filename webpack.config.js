@@ -8,12 +8,12 @@ module.exports = {
     entry: './src/index.js',
     mode: 'development',
     output: {
-        path: path.resolve(__dirname,'dist'),
+        path: path.resolve(__dirname,'docs'),
         filename: 'bundle.js',
     },
     devServer: {
         static: {
-            directory: path.join(__dirname,'dist'),
+            directory: path.join(__dirname,'docs'),
         },
         compress: false,
         port: 9000,
@@ -23,15 +23,15 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/, // находим все файлы .css
+                test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
 
             {
                 test: /\.(png|jpe?g|gif|svg)$/i,
-                type: 'asset/resource', // Используйте asset/resource для Webpack 5
+                type: 'asset/resource',
                 generator: {
-                    filename: './assets/images/[name][hash][ext]', // Путь к изображениям в dist
+                    filename: './assets/images/[name][hash][ext]',
                 },
             },
         ],
@@ -39,7 +39,7 @@ module.exports = {
     plugins: [
         new CopyWebpackPlugin({
             patterns: [
-                { from: path.resolve(__dirname,'assets/images'), to: path.resolve(__dirname,'dist') }, // Копирование изображений в dist
+                { from: path.resolve(__dirname,'assets/images'), to: path.resolve(__dirname,'docs') },
             ],
         }),
     ]
