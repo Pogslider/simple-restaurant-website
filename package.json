@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "devDependencies": {
     "copy-webpack-plugin": "^12.0.2",
