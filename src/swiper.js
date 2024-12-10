@@ -7,6 +7,8 @@ import 'swiper/css/navigation';
 const swiper = new Swiper('.swiper', {
     modules: [Navigation, Pagination,Autoplay],
     direction: 'horizontal',
+    slidesPerView: 1,
+    spaceBetween: 0,
     loop: true,
     autoplay: {
         delay: 10000,
